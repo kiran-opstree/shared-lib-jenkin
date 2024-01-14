@@ -2,6 +2,12 @@ def call(String name = 'Ninjas') {
     echo "Hello, ${name}."
 }
 
+def gitClone() {
+    stage('Code Checkout') {
+        git branch: 'java7', url: 'https://github.com/opstree/spring3hibernate.git'
+    }
+}    
+    
 def unitTest() {
     stage('Unit Testing') {
         sh 'mvn checkstyle:checkstyle'
